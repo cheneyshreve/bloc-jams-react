@@ -53,6 +53,16 @@ import PlayerBar from './PlayerBar';
     this.play(newSong);
   }
 
+
+  handleNextClick(){
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const nextSongIndex = currentIndex + 1;
+    if (nextSongIndex >= this.state.album.songs.length) { return; }
+    const nextSong = this.state.album.songs[nextSongIndex];
+    this.setSong(nextSong);
+    this.play(nextSong);
+  }
+
   render(){
    return (
     <section className="album">
@@ -91,8 +101,10 @@ import PlayerBar from './PlayerBar';
         <PlayerBar
          isPlaying={this.state.isPlaying}
          currentSong={this.state.currentSong}
+         nextSong={this.state.nextSong}
          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
          handlePrevClick={() => this.handlePrevClick()}
+         handleNextClick={()=> this.handleNextClick()}
          />
     </section>
    );
