@@ -1,0 +1,24 @@
+
+a {
+ color: white;
+ font-weight: bold;
+ text-decoration: none;
+}
+
+img {
+ position: relative;
+ height: 500px;
+ width: 500px;
+}
+
+a div {
+  font-size: 1.25rem;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: Garamond, sans-serif;
+}
+
+a div:hover {
+  color: purple;
+}

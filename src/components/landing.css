@@ -1,0 +1,49 @@
+
+body {
+ background: black;
+}
+
+nav h1 {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+a:hover {
+  color: purple;
+}
+
+.hero-title {
+ color: white;
+ text-shadow: 1px 1px 1px purple;
+ font-size: 2.25rem;
+ text-align: center;
+ opacity: 0.8;
+}
+
+.point-title {
+ font-size: 2rem;
+ font-family: Garamond;
+ opacity: 0.8;
+}
+
+nav a {
+  padding: 10px 10px;
+  color: white;
+  font-size: 1rem;
+  position: relative;
+}
+
+p {
+ padding: 1rem 4rem 3rem 4rem;
+ font-size: 1.5rem;
+}
+
+p.point-description {
+  padding: 1rem 4rem 1rem 4rem;
+  font-size: 1.5rem;
+  font-family: fantasy, cursive;
+  text-align: center;
+  color: purple;
+  font-weight: bold;
+  opacity: 0.8;
+}

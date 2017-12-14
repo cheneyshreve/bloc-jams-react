@@ -1,0 +1,222 @@
+
+/* album info */
+#album-title {
+  font-size: 1rem;
+  margin: 0 auto 0 auto;
+}
+
+.artist {
+  font-size: 1.25rem;
+  font-family: cursive, sans-serif;
+  margin: 0 auto 0 auto;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+#album-cover-art {
+  position: relative;
+  width: 350px;
+  height: 375px;
+  padding-bottom: 2px;
+}
+
+#album-info {
+  overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#album-title {
+  font-size: 2.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+#release-info {
+  opacity: 0.5;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* table with song list */
+table#song-list {
+  display: inline;
+  font-size: 1.1rem;
+  margin: 0 auto 0 auto;
+}
+
+td:hover .song-number {
+  display: none;
+}
+
+.song-number {
+  padding-right: 5px;
+  font-size: 0.8rem;
+}
+
+td {
+ padding: 1px 5px 1px 10px;
+ line-height: 1.5rem;
+ font-size: 1.3rem;
+}
+
+/* buttons */
+#buttons {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+#buttons button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  color: hsla(0, 0%, 100%, 0.5);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button#previous:hover, button#next:hover, button#play-pause:hover,td button:hover {
+  background: hsl(282, 35%, 25%);
+}
+
+#time-control input {
+  float: left;
+  width: calc(100% - 80px);
+  font-size: 0.8rem;
+}
+
+#time-control div {
+  color: hsla(0, 0%, 100%, 0.4);
+  width: 35px;
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+#volume-control div {
+  color: hsla(0, 0%, 100%, 0.4);
+  width: 35px;
+  display: block;
+  float: left;
+  text-align: center;
+}
+
+#time-control {
+  margin: 0.5rem auto;
+  max-width: 350px;
+  width: 50%;
+  font-size: 1rem;
+}
+
+#volume-control {
+  margin: 0.5rem auto;
+  max-width: 200px;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#volume-control input {
+  float: left;
+  width: calc(100% - 80px);
+  display: inline;
+  font-size: 1.25rem;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background: none;
+  margin-top: 7px;
+}
+
+input[type=range]:focus {
+  outline: none;
+  box-shadow: 2px 4px 3px hsla(0,0%,0%,0.25);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(57, 0, 0, 0), 0px 0px 0px rgba(83, 0, 0, 0);
+  background: hsl(282, 35%, 25%);
+  border-radius: 3.4px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: hsla(289, 48%, 85%, 0.5);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: hsl(282, 35%, 25%);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 0.8px;
+  cursor: pointer;
+  background: hsl(282, 35%, 25%);
+  border-radius: 3.4px;
+  border: 0.2px solid rgba(1, 1, 1, 0);
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 0px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: hsla(289, 48%, 85%, 0.5);
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 0.8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.4);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 6.8px;
+  box-shadow: 0px 0px 0px rgba(57, 0, 0, 0), 0px 0px 0px rgba(83, 0, 0, 0);
+}
+
+input[type=range]::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.4);
+  border: 0.2px solid rgba(1, 1, 1, 0);
+  border-radius: 6.8px;
+  box-shadow: 0px 0px 0px rgba(57, 0, 0, 0), 0px 0px 0px rgba(83, 0, 0, 0);
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: rgba(102, 103, 101, 0.79);
+  cursor: pointer;
+  height: 0.8px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(13, 13, 13, 0.4);
+}

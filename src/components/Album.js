@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import './album.css';
 
  class Album extends Component {
   constructor(props){
@@ -115,11 +116,16 @@ import PlayerBar from './PlayerBar';
    this.setState({ volume: newVolume });
  }
 
+ getSongClass(song){
+  const sameSong = this.state.currentSong === song;
+  sameSong ? this.isPlaying = true : this.isPlaying = false;
+ }
+
   render(){
    return (
     <section className="album">
       <section id="album-info">
-      <img id="album-cover-art" src={this.state.album.albumCover} />
+      <img id="album-cover-art" src={this.state.album.albumCover} alt="album-cover-art" />
       <div className="album-details">
         <h1 id="album-title">{this.state.album.title}</h1>
         <h2 className="artist">{this.state.album.artist}</h2>
@@ -135,12 +141,11 @@ import PlayerBar from './PlayerBar';
         <tbody>
         {
           this.state.album.songs.map ( (song, index) =>
-          <tr className="song" key={index} onClick={()=> this.handleSongClick(song)}>
+       <tr className={this.getSongClass(song)} key={index} onClick={()=> this.handleSongClick(song)}>
             <td>
             <button>
-              <span className="song-number">{index + 1} </span>
-              <span className="ion-play"></span>
-              <span className="ion-pause"></span>
+              <span className="song-number">{index + 1}</span>
+              <span className={this.isPlaying ? 'ion-pause' : 'ion-play'}></span>
             </button>
             </td>
             <td>{song.title}</td>
@@ -153,14 +158,15 @@ import PlayerBar from './PlayerBar';
         <PlayerBar
          isPlaying={this.state.isPlaying}
          currentSong={this.state.currentSong}
-         currentTime={this.formatTime(this.audioElement.currentTime)}
-         duration={this.formatTime(this.state.duration)}
+         currentTime={this.audioElement.currentTime}
+         duration={this.state.duration}
          volume={this.audioElement.currentVolume}
          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
          handlePrevClick={() => this.handlePrevClick()}
          handleNextClick={()=> this.handleNextClick()}
          handleTimeChange={(e) => this.handleTimeChange(e)}
          handleVolumeChange={(e) => this.handleVolumeChange(e)}
+         formatTime={(timeInSeconds) => this.formatTime(timeInSeconds)}
          />
     </section>
    );
