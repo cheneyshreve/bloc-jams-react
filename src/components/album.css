@@ -49,6 +49,23 @@ td:hover .song-number {
   display: none;
 }
 
+/*show appropriate play or pause button depending on class*/
+tr[class="songPlaying"] .ion-pause {
+  display: inline;
+}
+
+tr[class="songPlaying"] .ion-play {
+  display: none;
+}
+
+tr[class="songNotPlaying"] .ion-play {
+  display: inline;
+}
+
+tr[class="songNotPlaying"] .ion-pause {
+  display: none;
+}
+
 .song-number {
   padding-right: 5px;
   font-size: 0.8rem;

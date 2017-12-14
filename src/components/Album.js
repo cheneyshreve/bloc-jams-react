@@ -117,8 +117,11 @@ import './album.css';
  }
 
  getSongClass(song){
-  const sameSong = this.state.currentSong === song;
-  sameSong ? this.isPlaying = true : this.isPlaying = false;
+  if (this.state.currentSong === song && this.state.isPlaying){
+    return "songPlaying";
+  } else {
+    return "songNotPlaying";
+  }
  }
 
   render(){
@@ -145,7 +148,8 @@ import './album.css';
             <td>
             <button>
               <span className="song-number">{index + 1}</span>
-              <span className={this.isPlaying ? 'ion-pause' : 'ion-play'}></span>
+              <span className='ion-play'></span>
+              <span className='ion-pause'></span>
             </button>
             </td>
             <td>{song.title}</td>
