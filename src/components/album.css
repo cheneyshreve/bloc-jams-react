@@ -1,23 +1,45 @@
 
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto 150px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.player-bar {
+  background: hsla(0, 0%, 0%, 0.1);
+  bottom: 0;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
 /* album info */
 #album-title {
   font-size: 1rem;
   margin: 0 auto 0 auto;
+  text-align: center;
+  position: relative;
 }
 
 .artist {
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-family: cursive, sans-serif;
-  margin: 0 auto 0 auto;
+  margin: 0.5rem;
   font-weight: bold;
-  padding-bottom: 4px;
+  padding: 1rem;
+  position: relative;
 }
 
 #album-cover-art {
+  float: left;
+  margin-right: 2rem;
   position: relative;
-  width: 350px;
-  height: 375px;
-  padding-bottom: 2px;
+  width: 320px;
+  height: 300px;
 }
 
 #album-info {
@@ -27,22 +49,54 @@
 }
 
 #album-title {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   margin: 0;
-  text-align: center;
+  text-shadow: 2px 2px hsla(0, 0%, 100%, 0.4);
 }
 
 #release-info {
   opacity: 0.5;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 /* table with song list */
-table#song-list {
-  display: inline;
-  font-size: 1.1rem;
-  margin: 0 auto 0 auto;
+#song-list {
+  border-collapse: collapse;
+  clear: both;
+  font-weight: 100;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+#song-number-column {
+  width: 40px;
+}
+#song-duration-column {
+  width: 80px;
+}
+.song-number {
+ padding: 0.3rem;
+}
+
+tr {
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+  background: hsla(0, 0%, 0%, 0.01);
+  transition: all 0.2s ease;
+}
+
+tr:focus {
+  outline: aliceblue;
+}
+
+tr:last-child {
+  border: none;
+}
+
+td {
+  padding: 0.25rem;
 }
 
 td:hover .song-number {
@@ -66,17 +120,6 @@ tr[class="songNotPlaying"] .ion-pause {
   display: none;
 }
 
-.song-number {
-  padding-right: 5px;
-  font-size: 0.8rem;
-}
-
-td {
- padding: 1px 5px 1px 10px;
- line-height: 1.5rem;
- font-size: 1.3rem;
-}
-
 /* buttons */
 #buttons {
   width: 300px;
@@ -94,6 +137,13 @@ td {
   cursor: pointer;
 }
 
+#buttons #play-pause {
+  color: hsla(0, 0%, 100%, 0.8);
+  font-size: 2rem;
+  margin: 0.5rem 1rem 0;
+  transform: translateY(0.3rem);
+}
+
 button#previous:hover, button#next:hover, button#play-pause:hover,td button:hover {
   background: hsl(282, 35%, 25%);
 }
@@ -101,7 +151,6 @@ button#previous:hover, button#next:hover, button#play-pause:hover,td button:hove
 #time-control input {
   float: left;
   width: calc(100% - 80px);
-  font-size: 0.8rem;
 }
 
 #time-control div {
@@ -110,6 +159,7 @@ button#previous:hover, button#next:hover, button#play-pause:hover,td button:hove
   display: block;
   float: left;
   text-align: center;
+  font-size: 0.8rem;
 }
 
 #volume-control div {
@@ -118,28 +168,25 @@ button#previous:hover, button#next:hover, button#play-pause:hover,td button:hove
   display: block;
   float: left;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 #time-control {
   margin: 0.5rem auto;
-  max-width: 350px;
   width: 50%;
-  font-size: 1rem;
 }
 
 #volume-control {
-  margin: 0.5rem auto;
-  max-width: 200px;
-  width: 50%;
-  padding-top: 20px;
-  padding-bottom: 50px;
+  transform: translateY(-50%);
+  top: 40%;
+  left: 35%;
+  position: relative;
+  width: 25%;
 }
 
 #volume-control input {
   float: left;
-  width: calc(100% - 80px);
-  display: inline;
-  font-size: 1.25rem;
+  width: calc(100% - 90px);
 }
 
 input[type=range] {
